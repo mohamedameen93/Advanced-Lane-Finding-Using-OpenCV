@@ -609,15 +609,6 @@ r_fit_x_int and l_fit_x_int are the x-intercepts of the right and left fits, res
 
 ![](./README_imgs/project_video_output.gif)
 
-**Processing the challenge video (Sample output):**
-
-![](./README_imgs/challenge_project_video_output.gif)
-
-**Processing the harder challenge video (Sample output):**
-
-![](./README_imgs/harder_challenge_project_video_output.gif)
-
-
 ---
 ## Conclusion
 
