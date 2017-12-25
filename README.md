@@ -61,6 +61,7 @@ The effect of `undistort` is particularly noticeable, by the change in shape of 
 ## Step 3: Apply a Perspective Transform
 
 A common task in autonomous driving is to convert the vehicle’s camera view of the scene into a top-down “bird’s-eye” view. We'll use OpenCV's `cv2.getPerspectiveTransform()` and `cv2.getPerspectiveTransform()` to do this task.
+(Starting from line #174 in `model.py`)
 
 <figure>
  <img src="./README_imgs/03.png" width="1072" alt="Combined Image" />
@@ -88,6 +89,7 @@ A common task in autonomous driving is to convert the vehicle’s camera view of
 ## Step 4: Create a Thresholded Binary Image
 
 Now, we will use color transform and Sobel differentiation to detect the lane lines in the image.
+(Starting from line #247 in `model.py`)
 
 ### Exploring different color spaces
 
@@ -399,6 +401,7 @@ Now, we'll define the complete image processing function to read the raw image a
 ## Step 6: Detect the Lane Lines
 
 After applying calibration, thresholding, and a perspective transform to a road image, we should have a binary image where the lane lines stand out clearly. However, we still need to decide explicitly which pixels are part of the lines and which belong to the left line and which belong to the right line.
+(Starting from line #651 in `model.py`)
 
 ### Sliding Window Search
 
@@ -524,6 +527,8 @@ The Polyfit Using Fit from Previous Frame is another way that performs basically
 ---
 ## Step 7: Determine the Curvature of the Lane and Vehicle Position
 
+(Starting from line #972 in `model.py`)
+
 I've depended on this [tutorial](https://www.intmath.com/applications-differentiation/8-radius-curvature.php) to calculate the lane curvature. The curvature was calculated ussing this line of code:
 
 `curve_radius = ((1 + (2*fit[0]*y_0*y_meters_per_pixel + fit[1])**2)**1.5) / np.absolute(2*fit[0])`
@@ -591,7 +596,7 @@ r_fit_x_int and l_fit_x_int are the x-intercepts of the right and left fits, res
 </figure>
 
 <figure>
- <img src="./README_imgs/55.png" width="1072" alt="Combined Image" />
+ <img src="./README_imgs/65.png" width="1072" alt="Combined Image" />
  <figcaption>
  <p></p> 
  </figcaption>
@@ -601,12 +606,15 @@ r_fit_x_int and l_fit_x_int are the x-intercepts of the right and left fits, res
 ## Step 9: Process Project Videos
 
 **Processing the project video (Sample output):**
+
 ![](./README_imgs/project_video_output.gif)
 
 **Processing the challenge video (Sample output):**
+
 ![](./README_imgs/challenge_project_video_output.gif)
 
 **Processing the harder challenge video (Sample output):**
+
 ![](./README_imgs/harder_challenge_project_video_output.gif)
 
 
